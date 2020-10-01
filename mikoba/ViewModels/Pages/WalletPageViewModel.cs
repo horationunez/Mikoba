@@ -138,7 +138,7 @@ namespace mikoba.ViewModels.Pages
         {
             get { return new Command(async () =>
             {
-                await NavigationService.NavigateToAsync<AcceptConnectionInviteViewModel>();
+                await NavigationService.NavigateToAsync<CredentialOfferPageViewModel>();
                 //await this.ScanInvite();
             }); }
         }

@@ -4,6 +4,8 @@ using Xamarin.Forms;
 using System.Runtime.CompilerServices;
 using Hyperledger.Indy.AnonCredsApi;
 using mikoba.Annotations;
+using mikoba.Services;
+using mikoba.UI.Components;
 using mikoba.UI.Pages;
 using mikoba.UI.ViewModels;
 

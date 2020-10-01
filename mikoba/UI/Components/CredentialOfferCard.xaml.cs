@@ -14,11 +14,21 @@ namespace mikoba.UI.Components
 {
     public partial class CredentialOfferCard : ContentView
     {
+        public static readonly BindableProperty SsnTextProperty =
+            BindableProperty.Create("SsnText", typeof(string), typeof(CredentialOfferCard), default(string));
+            
+        public string SsnText
+        {
+            get { return (string)GetValue(SsnTextProperty); }
+            set { SetValue(SsnTextProperty, value); }
+        }
+        
         public CredentialOfferCard()
         {
             InitializeComponent();
             this.BindingContext = CredentialOfferCardViewModel.Instance;
-            
+            SsnTextLabel.SetBinding(Label.TextProperty, new Binding("SsnText", source: this));
+            SsnTextLabel2.SetBinding(Label.TextProperty, new Binding("SsnText", source: this));
         }
     }
 }

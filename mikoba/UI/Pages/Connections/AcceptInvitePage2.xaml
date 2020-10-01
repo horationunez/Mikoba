@@ -17,7 +17,7 @@
     <ScrollView>
         <StackLayout
             Padding="20">
-            <components:CredentialOfferCard/>
+            <!-- <components:CredentialOfferCard/> -->
             <Frame
                 StyleClass="displayFrame"
                 HasShadow="False">
