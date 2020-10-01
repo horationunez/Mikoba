@@ -109,6 +109,16 @@ namespace mikoba.ViewModels.Pages
             get => _attributes;
             set => this.RaiseAndSetIfChanged(ref _attributes, value);
         }
+        
+        
+        private RangeEnabledObservableCollection<string> _logs =
+            new RangeEnabledObservableCollection<string>();
+
+        public RangeEnabledObservableCollection<string> Logs
+        {
+            get => _logs;
+            set => this.RaiseAndSetIfChanged(ref _logs, value);
+        }
 
         private bool _hasCredential = false;
 
@@ -130,6 +140,7 @@ namespace mikoba.ViewModels.Pages
                 var results = await App.Container.Resolve<IEdgeClientService>().FetchInboxAsync(context);
                 foreach (var item in results.unprocessedItems)
                 {
+                    Logs.Add(item.Data);
                     var message = await MessageDecoder.ParseMessageAsync(item.Data);
                     _actionDispatcher.DispatchMessage(message);
                 }
