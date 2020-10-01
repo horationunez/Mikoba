@@ -4,6 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:extensions="clr-namespace:mikoba.Extensions;assembly=mikoba"
+             xmlns:components="clr-namespace:mikoba.UI.Components;assembly=mikoba"
              x:Class="mikoba.UI.Pages.Connections.AcceptConnectionInvitePage">
     <ContentPage.Resources>
         <StyleSheet Source="../../../Styles/Global.css" />
@@ -20,6 +21,13 @@
                 <RowDefinition Height="1.8*" />
                 <RowDefinition Height="0.5*" />
             </Grid.RowDefinitions>
+            <components:KivaSvgImage
+                ImageKey="dots"
+                HeightRequest="83"
+                WidthRequest="97"
+                BackgroundColor="#F2F2F2"
+                HorizontalOptions="End"
+                VerticalOptions="End" />
             <StackLayout
                 Grid.Row="0"
                 Padding="10"
