@@ -14,24 +14,13 @@ namespace mikoba.UI.Components
         {
             get { return typeof(App).GetTypeInfo().Assembly; }
         }
-        public static readonly BindableProperty ButtonStyleProperty =
-            BindableProperty.Create("ButtonStyle", typeof(string), typeof(ActionButton), default(string));
         
-        public string ButtonStyle
+        public static readonly BindableProperty SecondaryStyleProperty =
+            BindableProperty.Create("SecondaryStyle", typeof(string), typeof(ActionButton), default(string));
+        public string SecondaryStyle
         {
-            // get { return (string) GetValue(ButtonStyleProperty);}
-            get
-            {
-                if ((string) GetValue(ButtonStyleProperty) == "Secondary")
-                {
-                    return "#FFFFFF";
-                }
-                return "";
-            }
-            set
-            {
-                SetValue(ButtonStyleProperty, value);
-            }
+            get { return (string)GetValue(SecondaryStyleProperty); }
+            set { SetValue(SecondaryStyleProperty, value); }
         }
 
         public static readonly BindableProperty ActionButtonTextProperty =
@@ -86,8 +75,6 @@ namespace mikoba.UI.Components
             actionButtonSvg.SetBinding(SvgImage.SvgPathProperty, new Binding("ActionButtonSvg", source: this));
             actionButtonSvg.SetBinding(SvgImage.SvgAssemblyProperty, new Binding("SvgAssembly", source: this));
             ActionButtonTextLabel.SetBinding(Label.TextProperty, new Binding("ActionButtonText", source: this));
-            var style = new Binding("ButtonStyle", source: this);
-            actionButton.SetBinding(Frame.BackgroundColorProperty, style);
         }
 
         void ButtonClicked(System.Object sender, System.EventArgs e)
