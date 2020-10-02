@@ -46,7 +46,7 @@ namespace mikoba.UI.Components
                 OnPropertyChanged("ActionButtonSvg");
             }
         }
-        
+
         public static readonly BindableProperty CommandProperty =
             BindableProperty.Create("Command", typeof(ICommand), typeof(ActionButton), null);
 

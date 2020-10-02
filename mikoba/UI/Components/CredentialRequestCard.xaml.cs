@@ -15,6 +15,60 @@ namespace mikoba.UI.Components
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CredentialRequestCard : ContentView
     {
+        public static readonly BindableProperty NationalIdProperty =
+            BindableProperty.Create("NationalId", typeof(string), typeof(CredentialRequestCard), default(string));
+            
+        public string NationalId
+        {
+            get { return (string)GetValue(NationalIdProperty); }
+            set { SetValue(NationalIdProperty, value); }
+        }
+        
+        public static readonly BindableProperty FirstNameProperty =
+            BindableProperty.Create("FirstName", typeof(string), typeof(CredentialRequestCard), default(string));
+            
+        public string FirstName
+        {
+            get { return (string)GetValue(FirstNameProperty); }
+            set { SetValue(FirstNameProperty, value); }
+        }
+        
+        public static readonly BindableProperty LastNameProperty =
+            BindableProperty.Create("LastName", typeof(string), typeof(CredentialRequestCard), default(string));
+            
+        public string LastName
+        {
+            get { return (string)GetValue(LastNameProperty); }
+            set { SetValue(LastNameProperty, value); }
+        }
+        
+        public static readonly BindableProperty BirthDateProperty =
+            BindableProperty.Create("BirthDate", typeof(string), typeof(CredentialRequestCard), default(string));
+        
+        public string BirthDate
+        {
+            get { return (string)GetValue(BirthDateProperty); }
+            set { SetValue(BirthDateProperty, value); }
+        }
+        
+        public static readonly BindableProperty TitleProperty =
+            BindableProperty.Create("Title", typeof(string), typeof(CredentialRequestCard), default(string));
+        
+        public string Title
+        {
+            get { return (string)GetValue(TitleProperty); }
+            set { SetValue(TitleProperty, value); }
+        }
+        
+        public static readonly BindableProperty PhotoAttachProperty =
+            BindableProperty.Create("PhotoAttach", typeof(ImageSource), typeof(CredentialRequestCard), default(ImageSource));
+        
+        public ImageSource PhotoAttach
+        {
+            get { return (ImageSource)GetValue(PhotoAttachProperty); }
+            set { SetValue(PhotoAttachProperty, value); }
+        }
+        
         public CredentialRequestCard()
         {
             InitializeComponent();
@@ -27,6 +81,8 @@ namespace mikoba.UI.Components
             LastNameLabel2.SetBinding(Label.TextProperty, new Binding("LastName", source: this));
             BirthDateLabel.SetBinding(Label.TextProperty, new Binding("BirthDate", source: this));
             BirthDateLabel2.SetBinding(Label.TextProperty, new Binding("BirthDate", source: this));
+            TitleLabel.SetBinding(Label.TextProperty, new Binding("Title", source: this));
+            TitleLabel2.SetBinding(Label.TextProperty, new Binding("Title", source: this));
         }
     }
 }

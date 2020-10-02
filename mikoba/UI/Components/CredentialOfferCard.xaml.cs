@@ -50,6 +50,25 @@ namespace mikoba.UI.Components
             set { SetValue(BirthDateProperty, value); }
         }
         
+        public static readonly BindableProperty TitleProperty =
+            BindableProperty.Create("Title", typeof(string), typeof(CredentialOfferCard), default(string));
+        
+        public string Title
+        {
+            get { return (string)GetValue(TitleProperty); }
+            set { SetValue(TitleProperty, value); }
+        }
+        
+        public static readonly BindableProperty PhotoAttachProperty =
+            BindableProperty.Create("PhotoAttach", typeof(ImageSource), typeof(CredentialOfferCard), default(ImageSource));
+        
+        public ImageSource PhotoAttach
+        {
+            get { return (ImageSource)GetValue(PhotoAttachProperty); }
+            set { SetValue(PhotoAttachProperty, value); }
+        }
+        
+        
         public CredentialOfferCard()
         {
             InitializeComponent();
@@ -62,6 +81,8 @@ namespace mikoba.UI.Components
             LastNameLabel2.SetBinding(Label.TextProperty, new Binding("LastName", source: this));
             BirthDateLabel.SetBinding(Label.TextProperty, new Binding("BirthDate", source: this));
             BirthDateLabel2.SetBinding(Label.TextProperty, new Binding("BirthDate", source: this));
+            TitleLabel.SetBinding(Label.TextProperty, new Binding("Title", source: this));
+            TitleLabel2.SetBinding(Label.TextProperty, new Binding("Title", source: this));
         }
     }
 }
