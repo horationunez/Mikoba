@@ -20,6 +20,7 @@
             Padding="20,5"
             Margin="0"
             HasShadow="False"
+            x:Name="actionButton"
             >
             <Grid>
                 <Grid.GestureRecognizers>
@@ -42,7 +43,6 @@
                         x:Name="ActionButtonTextLabel"
                         FontFamily="KivaPostGrot-Medium"
                         FontSize="15"
-                        TextColor="#FFFFFF"
                     />
                 </StackLayout>
             </Grid>
