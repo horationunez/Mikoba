@@ -17,9 +17,9 @@ namespace mikoba.UI.Components
         
         public static readonly BindableProperty SecondaryStyleProperty =
             BindableProperty.Create("SecondaryStyle", typeof(string), typeof(ActionButton), default(string));
-        public string SecondaryStyle
+        public bool SecondaryStyle
         {
-            get { return (string)GetValue(SecondaryStyleProperty); }
+            get { return (bool)GetValue(SecondaryStyleProperty); }
             set { SetValue(SecondaryStyleProperty, value); }
         }
 
