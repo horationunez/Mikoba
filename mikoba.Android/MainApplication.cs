@@ -20,6 +20,10 @@ namespace mikoba.Droid
         public override void OnCreate()
         {
             base.OnCreate();
+            Shiny.AndroidShinyHost.Init(
+                this,
+                new ShinyStartupXamarin()
+            );
             CrossCurrentActivity.Current.Init(this);
         }
     }

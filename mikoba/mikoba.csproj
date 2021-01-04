@@ -18,6 +18,8 @@
     <PackageReference Include="ReactiveUI" Version="11.5.35" />
     <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.5" />
     <PackageReference Include="Sentry" Version="2.1.6" />
+    <PackageReference Include="Shiny.Core" Version="2.0.0.2412-preview" />
+    <PackageReference Include="Shiny.Notifications" Version="2.0.0.2412-preview" />
     <PackageReference Include="SkiaSharp.Views.Forms" Version="2.80.2" />
     <PackageReference Include="West.Extensions.Hosting.XamarinForms" Version="2.2.1" />
     <PackageReference Include="West.Extensions.Xamarin.Abstractions" Version="1.0.5" />
