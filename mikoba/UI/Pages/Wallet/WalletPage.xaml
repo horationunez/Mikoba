@@ -57,14 +57,12 @@
                     Orientation="Horizontal"
                     Grid.Column="1"
                     HorizontalOptions="EndAndExpand">
-                    <components:ActionButton
-                        Grid.Row="1"
-                        HorizontalOptions="Center"
-                        VerticalOptions="Center"
-                        Margin="0,0,0,10"
-                        ActionButtonSvg="mikoba.Images.gear.svg"
-                        ActionButtonText=""
-                        Command="{Binding SettingsCommand}" />
+                    <components:KivaSvgImage
+                        Command="{Binding SettingsCommand}"
+                        ImageKey="gear"
+                        HeightRequest="35"
+                        WidthRequest="35"
+                        HorizontalOptions="Start" />
                 </StackLayout>
                 <ScrollView
                     HorizontalOptions="FillAndExpand"
@@ -86,6 +84,7 @@
                     </StackLayout>
                 </ScrollView>
                 <Label
+                    Grid.ColumnSpan="2"
                     Grid.Row="1"
                     IsVisible="{Binding HasContent, Converter={StaticResource BooleanInverse}}"
                     RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Type=Constant, Constant=30}"
@@ -102,6 +101,7 @@
                     Text="{Binding WelcomeText}" />
                 <StackLayout
                     WidthRequest="250"
+                    Grid.ColumnSpan="2"
                     IsVisible="{Binding HasContent, Converter={StaticResource BooleanInverse}}"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
@@ -122,6 +122,7 @@
                         Text="Recover Wallet Instead" />
                 </StackLayout>
                 <StackLayout
+                    Grid.ColumnSpan="2"
                     IsVisible="{Binding HasContent}"
                     HorizontalOptions="Center"
                     VerticalOptions="End"
